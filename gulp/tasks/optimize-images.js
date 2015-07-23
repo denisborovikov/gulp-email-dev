@@ -3,6 +3,7 @@ module.exports = function(gulp, options, $) {
         return gulp.src(options.files.img)
             .pipe($.newer(options.paths.img))
             .pipe(($.imagemin({progressive: true})))
-            .pipe(gulp.dest(options.paths.img));
+            .pipe(gulp.dest(options.paths.img))
+            .pipe(reload({stream: true}));
     });
 };
