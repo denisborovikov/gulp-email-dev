@@ -6,8 +6,8 @@ module.exports = function (gulp, options, $) {
     gulp.task('html', function () {
         return gulp.src(options.files.html)
             .pipe($.plumber())
-            .pipe($.swig())
-            .pipe($.emailBuilder({juice: {preserveMediaQueries: true}}))
+            .pipe($.swig({defaults: { cache: false}}))
+            .pipe($.emailBuilder())
             .pipe(gulpCallback(StringBatchReplace))
             .pipe($.htmlI18n({
               langDir       : './lang'
