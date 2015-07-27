@@ -11,7 +11,7 @@ var EmailBuilder = require('email-builder-core');
 
 module.exports = function (gulp, options, $) {
   return gulp.task('litmus', function (callback) {
-    var client = argv.client && options.clients[argv.client] ? argv.client : 'all';
+    var clients = argv.clients && options.clients[argv.clients] ? argv.clients : 'all';
     var files = argv.file && fs.existsSync(path.join(options.paths.dest, argv.file)) ?  [argv.file] : fs.readdirSync(options.paths.dest);
     
     var parms = {
@@ -19,7 +19,7 @@ module.exports = function (gulp, options, $) {
       username : options.litmus.username,
       password : options.litmus.password,
       url : options.litmus.url,
-      applications : options.clients[client]
+      applications : options.clients[clients]
     };
 
     var emailBuilder = new EmailBuilder({litmus: parms});
