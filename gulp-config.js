@@ -56,7 +56,7 @@ options.paths = {
 // `options.files.img` used in images proccessing task.
 options.files = {
     css    : [options.paths.css + '**/*.css'],
-    html   : [options.paths.html + '*.html'],
+    html   : [options.paths.html + '**/*.html'],
     img    : [options.paths.imgsrc + '**/*.+(png|jpg|gif)'],
     scss   : [options.paths.scss + '**/*.scss'],
 };

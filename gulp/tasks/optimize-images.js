@@ -1,3 +1,6 @@
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+
 module.exports = function(gulp, options, $) {
     gulp.task('images', function () {
         return gulp.src(options.files.img)
